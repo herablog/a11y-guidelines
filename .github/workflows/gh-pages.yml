@@ -21,10 +21,13 @@ jobs:
       with:
         hugo-version: '0.55.6'
 
-    - name: Build
+    - name: Build CSS
       run: |
+        npm install
         npm run build
-        hugo --minify
+    
+    - name: Build Hugo
+      run: hugo --minify
 
     # - name: Deploy
     #   uses: peaceiris/actions-gh-pages@v2.5.0
